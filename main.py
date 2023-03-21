@@ -19,10 +19,7 @@ ydl_opts = {
                         }],
                     }
                 
-print(videos)
-c = 0
-everything = []
-for video in videos:
+ for video in videos:
     with YoutubeDL(ydl_opts) as ydl:
       info_dict = ydl.extract_info("https://www.youtube.com/watch?v="+video["videoId"], download=False)
       video_url = info_dict.get("url", None)
